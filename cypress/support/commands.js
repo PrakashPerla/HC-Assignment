@@ -185,7 +185,25 @@ Cypress.Commands.add("verifyCartItemContents", () => {
     scart.getCartInfoTable().getTable().should(tableData => {
         expect(tableData).not.to.be.empty;        
     })
-    cy.verifyProduct1Cart();
+    cy.get("#cart_info_table")
+                .find("tr")
+                .then((rows) =>{
+                    rows.toArray().forEach((element) => {
+                        console.log("table rows"+element);
+                        console.log("html text is: "+element.innerHTML);
+                        if(rows.index(element)>0){
+                            //console.log("asserting "+rows.index(element));
+                            //const price=cy.get('.cart_price').eq(rows.index(element)).invoke('text');
+                            //console.log(price);
+                            cy.get('.cart_price').eq(rows.index(element)-1).should('be.visible');
+                            cy.get('.cart_quantity').eq(rows.index(element)-1).should('contain.text',"1");
+                            cy.get('.cart_total').eq(rows.index(element)-1).should('be.visible');
+                            //cy.get('.cart_price').eq(rows.index(element)).should('contain.text',"500");
+                            //cy.get('.cart_price').eq(rows.index(element)).should('match',/^Rs.\d\d\d/);  
+                        }
+                    });
+                })
+    //cy.verifyProduct1Cart();
     //cy.verifyProduct2Cart();
     /*Place Holder - working on this but was getting the error so moved to without loop way in order to submit the assignment.
     will get this fixed and update the PR.
