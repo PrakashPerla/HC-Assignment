@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "cypress": "^13.8.1"
+  },
+  "scripts": {
+    "e2e:chrome": "cypress run --browser chrome"
+  },
+  "dependencies": {
+    "cypress-get-table": "^1.0.1",
+    "deep-equal-in-any-order": "^2.0.6"
+  }
+}

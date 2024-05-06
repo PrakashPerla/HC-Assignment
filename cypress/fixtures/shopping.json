@@ -1,0 +1,22 @@
+{
+  "ProductPageUrl": {
+    "Link": "https://automationexercise.com/products"
+  },
+  "ProductSearch": {
+    "SearchText": "Saree"
+  },
+  "WomenCategories": {
+    "Cat1": "Dress",
+    "Cat2": "Tops",
+    "Cat3": "Saree"
+  },
+  "MenCategories": {
+    "Cat1": "Tshirts",
+    "Cat2": "Jeans"
+  },
+  "KidCategories": {
+    "Cat1": "Dress",
+    "Cat2": "Tops & Shirts"
+  } 
+}
+
